@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>  
+
+    // pega  um html colection e transforma em um array usando(Array.from) e percorre o array usando (forEach) 
+        document.getElementById('primeiro').classList.add('destaque')
+
+        const divs = document.getElementsByTagName('div') //seleciona a tag inteira ('div')
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+     
+    // usando o operador sprad para percorrer
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+   // sem transformar em array ,apenas usando o for
+        const ultimosElementos = getElementsByTagName('ultimo')
+        for( let e of ultimosElementos) {
+            e.classList.remove('destaque')
+        }
+    </script>
+</body>
+</html>
